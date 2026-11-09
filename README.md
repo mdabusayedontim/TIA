@@ -1,21 +1,38 @@
-# The Ignite Academy — UI Design Kit
+# The Ignite Academy — Website Starter
 
-এই ZIP-এ Android Studio project-এর জন্য UI reference package আছে।
+A responsive Bengali-first coaching academy website with a demo admin portal, designed for GitHub Pages.
 
-## ফোল্ডার
-- `web-admin-reference/index.html` — browser-এ চালানো যায় এমন responsive UI prototype। Sidebar থেকে screen বদলানো যায় এবং Role selector দিয়ে Admin, Student, Teacher, Parent preview করা যায়।
-- `android-compose/` — Jetpack Compose theme, reusable components এবং integration guide।
-- `design-spec.md` — screen inventory, colors, typography, navigation ও implementation notes।
+## Files
+- `index.html` — public academy website
+- `admin.html` — admin login and demo dashboard
+- `style.css` — responsive styling
+- `script.js` — mobile menu and demo admission form
+- `admin.js` — demo login and local dashboard
 
-## Prototype চালানো
-`web-admin-reference/index.html` ফাইলটি Chrome/Edge-এ খুলুন। এটি static front-end prototype; Firebase বা live payment সংযুক্ত নয়।
+## Run locally
+Open `index.html` in a browser. For a local server, use VS Code Live Server.
 
-## Android Studio-তে ব্যবহার
-1. নিজের Android project-এর package name অনুযায়ী Kotlin package path ঠিক করুন।
-2. `android-compose/`-এর Theme ও Components ফাইল আপনার app module-এ কপি করুন।
-3. `design-spec.md` অনুসারে প্রতিটি screen আলাদা Compose route হিসেবে তৈরি করুন।
-4. Existing project structure/Gradle version না দেখে build files replace করবেন না।
-5. UI prototype-এর sample data production data হিসেবে ব্যবহার করবেন না।
+## Demo admin access
+- Email: `admin@igniteacademy.com`
+- Password: `Ignite@2027`
 
-## গুরুত্বপূর্ণ
-এই ZIP হলো UI design starter/reference, সম্পূর্ণ backend বা production app নয়। Authentication, Firestore, Storage, FCM, Security Rules এবং Admin API আলাদাভাবে configure ও test করতে হবে।
+## Publish with GitHub Pages
+1. Create a new GitHub repository, e.g. `ignite-academy-website`.
+2. Upload all files in this folder to the repository root (not the ZIP itself).
+3. Open **Settings → Pages**.
+4. Under **Build and deployment**, choose **Deploy from a branch**.
+5. Select branch `main`, folder `/ (root)`, then Save.
+6. Wait for deployment. Your website URL will appear in the Pages section.
+7. Admin page: append `/admin.html` to the website URL.
+
+## Important security and data notes
+This is a **frontend design/demo**, not a production management system.
+- The demo credentials are visible in `admin.js`; anyone can inspect the source and bypass this login.
+- Admission form entries and dashboard data use browser `localStorage` only. They are not sent to you and are not shared across devices.
+- Do not use this demo login for real student or financial data.
+- Before public real-world use, connect Firebase Authentication (admin-only access), Firestore/Cloud Functions, server-side security rules, and a real form submission workflow. Never store real admin passwords in frontend JavaScript.
+
+## Customize
+- Update academy copy and contact details in `index.html`.
+- Update colors in `style.css` (`#101a35` navy, `#f5a623` gold).
+- Replace placeholder teacher information and notices with verified academy details.
